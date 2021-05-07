@@ -7,7 +7,7 @@ app "waypoint-go-lambda" {
     registry {
       use "aws-ecr" {
         region = "us-east-1"
-        repository = "waypoint-go-test"
+        repository = "waypoint-lambda-go"
         tag = "latest"
       }
     }
