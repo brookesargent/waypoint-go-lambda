@@ -1,4 +1,12 @@
 terraform {
+  backend "remote" {
+    organization = "pg-consumer-iot"
+
+    workspaces {
+      name = "brooke-waypoint-test"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"

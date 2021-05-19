@@ -1,6 +1,16 @@
 project = "waypoint-go-lambda"
 
 app "waypoint-go-lambda" {
+  config {
+    env = {
+      "PRIVATE_SUBNET_IDS" = configdynamic("terraform-cloud", {
+        organization = "pg-consumer-iot"
+        workspace = "brooke-waypoint-test"
+        output = "vpc_subnet_ids"
+      })
+    }
+  }
+
   build {
     use "docker" {}
 

@@ -32,3 +32,8 @@ output "cluster_name" {
   description = "Kubernetes Cluster Name"
   value       = local.cluster_name
 }
+
+output "vpc_subnet_ids" {
+  description = "List of subnet ids from VPC"
+  value = module.vpc.private_subnets
+}
